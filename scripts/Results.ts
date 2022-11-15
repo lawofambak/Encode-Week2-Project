@@ -13,7 +13,7 @@ async function main() {
     let ballotContract: Ballot;
     const ballotContractFactory = new Ballot__factory(signer);
     ballotContract = ballotContractFactory.attach(contractAddress);
-    let winnerName = await ballotContract.winnerName();
+    let winnerName: any = await ballotContract.winnerName();
     winnerName = ethers.utils.parseBytes32String(winnerName);
     console.log(`Winning proposal name: ${winnerName}`);
 }
